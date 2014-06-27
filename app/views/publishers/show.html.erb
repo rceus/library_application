@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @publisher.name %>
+</p>
+
+<p>
+  <b>Street:</b>
+  <%= @publisher.street %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @publisher.city.city_name %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @publisher.country.country_name %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @publisher.phone %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @publisher.email %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @publisher.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_publisher_path(@publisher) %> |
+<%= link_to 'Back', publishers_path %>

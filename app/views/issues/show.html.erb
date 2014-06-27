@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Book:</b>
+  <%= @issue.book_id %>
+</p>
+
+<p>
+  <b>Member:</b>
+  <%= @issue.member_id %>
+</p>
+
+<p>
+  <b>Issue Date:</b>
+  <%= @issue.issue_date %>
+</p>
+
+<p>
+  <b>Due Date:</b>
+  <%= @issue.due_date %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @issue.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_issue_path(@issue) %> |
+<%= link_to 'Back', issues_path %>

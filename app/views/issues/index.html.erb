@@ -1,0 +1,31 @@
+<h1>Listing issues</h1>
+
+<table>
+  <tr>
+    <th>Book</th>
+    <th>Member</th>
+    <th>Issue Date</th>
+    <th>Due Date</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @issues.each do |issue| %>
+  <tr>
+    <td><%= issue.book_id %></td>
+    <td><%= issue.member_id %></td>
+    <td><%= issue.issue_date %></td>
+    <td><%= issue.due_date %></td>
+    <td><%= issue.status %></td>
+    <td><%= link_to 'Show', issue %></td>
+    <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
+    <td><%= link_to 'Destroy', issue, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Issue', new_issue_path %>

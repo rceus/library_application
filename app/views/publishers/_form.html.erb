@@ -1,0 +1,47 @@
+<%= form_for(@publisher) do |f| %>
+  <% if @publisher.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@publisher.errors.count, "error") %> prohibited this publisher from being saved:</h2>
+
+      <ul>
+      <% @publisher.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :street %><br />
+    <%= f.text_field :street %>
+  </div>
+  <div class="field">
+   <%= f.label :city_id %><br />
+    <%= f.select :city_id, City.find(:all,:group=>"city_name", :order=> "city_name").collect {|s|
+      [(s.city_name),s.id]} %>
+  </div>
+  <div class="field">
+    <%= f.label :country_id %><br />
+    <%= f.select :country_id, Country.find(:all,:group=>"country_name", :order=> "country_name").collect {|s|
+      [(s.country_name),s.id]} %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.number_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

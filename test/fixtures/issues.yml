@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  book_id: 1
+  member_id: MyString
+  issue_date: 2014-06-27
+  due_date: 2014-06-27
+  status: false
+
+two:
+  book_id: 1
+  member_id: MyString
+  issue_date: 2014-06-27
+  due_date: 2014-06-27
+  status: false
