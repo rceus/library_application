@@ -1,4 +1,8 @@
 LibraryVersion1::Application.routes.draw do
+  get "search/index"
+
+  get "hello/index"
+
   resources :issues
 
   resources :publishers
