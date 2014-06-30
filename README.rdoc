@@ -22,10 +22,13 @@ Run the following commands:
 
        bundle install
 
+       rake db:migrate
+       
+       rails s
+       
+Go to https://localhost:3000 and you are done.
 
-<hr>
 New to Rails? Should go through this first.
-
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
