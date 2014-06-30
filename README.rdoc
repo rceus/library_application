@@ -1,3 +1,19 @@
+A comprehensive and easy to use library management system.
+
+Written in Ruby on Rails
+
+Ruby 1.9.3
+Rails 3.2.0
+
+Special Gems:
+twitter-bootstrap-rails
+simple_form
+
+Developed by Rishabh Jain
+
+____________________________________________________________________________________________________________
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
