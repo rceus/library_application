@@ -12,12 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :book_id %><br />
-    <%= f.number_field :book_id %>
+   <%= f.label :book_id %><br />
+    <%= f.select :book_id, Book.find(:all, :group=>"name", :order=> "name").collect {|s|
+      [(s.name),s.id]} %>
   </div>
   <div class="field">
-    <%= f.label :member_id %><br />
-    <%= f.number_field :member_id %>
+   <%= f.label :member_id %><br />
+    <%= f.select :member_id, Member.find(:all, :order=> "first_name, last_name").collect {|s|
+      [(s.first_name+" "+s.last_name),s.id]} %>
   </div>
   <div class="field">
     <%= f.label :issue_date, 'Issue Date' %><br />
