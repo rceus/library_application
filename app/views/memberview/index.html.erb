@@ -1,9 +1,9 @@
-<H1>Membership Records</H1>
+<H1>Membership Essentials</H1>
 <hr>
 <br><br>
 <ul>
-<li><a href="http://172.26.73.26:3000/members">All Members</a><br><br>
+<li><%= link_to 'All Members', members_path %><br><br>
 <li><%= link_to 'Add New Member', new_member_path %>
 </ul>
 <br><br>
-<a href="http://172.26.73.26:3000/">Go Back</a>
+<%= link_to 'Go Back', hello_index_path%>

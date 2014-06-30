@@ -1,4 +1,12 @@
 LibraryVersion1::Application.routes.draw do
+  get "shelfview/index"
+
+  get "issueview/index"
+
+  get "categoriesview/index"
+
+  get "publisherview/index"
+
   get "authorview/index"
 
   get "bookview/index"
