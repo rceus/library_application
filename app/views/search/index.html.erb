@@ -1,6 +1,15 @@
-<h1>Search for Books:</h1>
+<h1>Search for Books:</h1><hr>
+
 <br><br>
-<a href="http://172.26.73.26:3000/books">All Books</a><br>
-<a href="http://172.26.73.26:3000/authors">All Authors</a><br>
-<a href="http://172.26.73.26:3000/publishers">All Publishers</a><br>
-<a href="http://172.26.73.26:3000/issues">All Books Issued</a>
+
+<ul>
+<li><%= link_to 'Manage Books', bookview_index_path %><br><br>
+<li><%= link_to 'Manage Authors', authorview_index_path %><br><br>
+<li><a href="http://172.26.73.26:3000/publishers">All Publishers</a><br><br>
+<li><a href="http://172.26.73.26:3000/issues">All Books Issued</a><br><br>
+<li><a href="http://172.26.73.26:3000/categories">All Categories</a><br><br>
+<li><a href="http://172.26.73.26:3000/shelves">All Shelves</a>
+</ul>
+<br><br><br>
+
+<a href="http://172.26.73.26:3000/">Go Back</a>

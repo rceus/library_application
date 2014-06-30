@@ -1,4 +1,10 @@
 LibraryVersion1::Application.routes.draw do
+  get "authorview/index"
+
+  get "bookview/index"
+
+  get "memberview/index"
+
   get "search/index"
 
   get "hello/index"
@@ -70,7 +76,7 @@ LibraryVersion1::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'hello#index'
 
   # See how all your routes lay out with "rake routes"
 
