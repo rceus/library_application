@@ -1,4 +1,4 @@
-<%= simple_form_for(@member, html: {class: 'form_horizontal'}) do |f| %>
+<%= simple_form_for(@member, :html => { :class => 'form' }) do |f| %>
   <% if @member.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@member.errors.count, "error") %> prohibited this member from being saved:</h2>
@@ -13,15 +13,15 @@
 
   <div class="field">
     <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, :placeholder => 'First Name', label:'First Name' %>
   </div>
   <div class="field">
     <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, :placeholder=> 'Last Name' %>
   </div>
   <div class="field">
     <%= f.label :street %><br />
-    <%= f.text_field :street %>
+    <%= f.text_field :street, :placeholder=>'Street Address'%>
   </div>
   <div class="field">
    <%= f.label :city_id %><br />
@@ -35,11 +35,11 @@
   </div>
   <div class="field">
     <%= f.label :phone %><br />
-    <%= f.number_field :phone %>
+    <%= f.number_field :phone, :placeholder=>'Phone Number' %>
   </div>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email,:placeholder=>'E-mail' %>
   </div>
   <div class="actions">
     <%= f.submit %>

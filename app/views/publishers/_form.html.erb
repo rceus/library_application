@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, placeholder: 'Name' %>
   </div>
   <div class="field">
     <%= f.label :street %><br />
-    <%= f.text_field :street %>
+    <%= f.text_field :street, placeholder:'Street Address' %>
   </div>
   <div class="field">
    <%= f.label :city_id %><br />
@@ -31,15 +31,15 @@
   </div>
   <div class="field">
     <%= f.label :phone %><br />
-    <%= f.number_field :phone %>
+    <%= f.number_field :phone, placeholder:'Phone' %>
   </div>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, placeholder:'E-mail' %>
   </div>
   <div class="field">
     <%= f.label :status %><br />
-    <%= f.text_field :status %>
+    <%= f.text_field :status, placeholder:'Active/Inactive' %>
   </div>
   <div class="actions">
     <%= f.submit %>
