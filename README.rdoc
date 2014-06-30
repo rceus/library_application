@@ -1,5 +1,4 @@
 A comprehensive and easy to use library management system.
-
 Written in Ruby on Rails
 
 Ruby 1.9.3
@@ -8,11 +7,23 @@ Rails 3.2.0
 Special Gems:
 twitter-bootstrap-rails
 simple_form
+bundler
 
 Developed by Rishabh Jain
 
-____________________________________________________________________________________________________________
+Instructions:
 
+Install the specified gems.
+Clone this application to your machine.
+Get into the directory.
+
+Run the following commands:
+
+bundle install
+
+
+
+New to Rails? Should go through this first.
 
 == Welcome to Rails
 
