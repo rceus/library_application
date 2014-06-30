@@ -1,3 +1,4 @@
+== Specifications and Instructions
 A comprehensive and easy to use library management system.
 Written in Ruby on Rails
 
@@ -19,10 +20,10 @@ Get into the directory.
 
 Run the following commands:
 
-bundle install
+       bundle install
 
 
-
+<hr>
 New to Rails? Should go through this first.
 
 == Welcome to Rails
