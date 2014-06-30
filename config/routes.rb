@@ -1,4 +1,6 @@
 LibraryVersion1::Application.routes.draw do
+  get "test/index"
+
   get "shelfview/index"
 
   get "issueview/index"
