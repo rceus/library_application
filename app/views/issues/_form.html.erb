@@ -1,39 +1,13 @@
-<%= simple_form_for(@issue) do |f| %>
-  <% if @issue.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@issue.errors.count, "error") %> prohibited this issue from being saved:</h2>
-
-      <ul>
-      <% @issue.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-   <%= f.label :book_id %><br />
-    <%= f.select :book_id, Book.find(:all, :group=>"name", :order=> "name").collect {|s|
-      [(s.name),s.id]} %>
-  </div>
-  <div class="field">
-   <%= f.label :member_id %><br />
-    <%= f.select :member_id, Member.find(:all, :order=> "first_name, last_name").collect {|s|
+<%= simple_form_for @issue, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :book_id,as: :select,collection: Book.find(:all, :order=> "name").collect {|s|
+      [(s.name),s.id]}  %>
+  <%= f.input :member_id,as: :select,collection: Member.find(:all, :order=> "first_name, last_name").collect {|s|
       [(s.first_name+" "+s.last_name),s.id]} %>
-  </div>
-  <div class="field">
-    <%= f.label :issue_date, 'Issue Date' %><br />
-    <%= f.date_select :issue_date %>
-  </div>
-  <div class="field">
-    <%= f.label :due_date, 'Due Date' %><br />
-    <%= f.date_select :due_date %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.check_box :status %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <%= f.input :issue_date %>
+  <%= f.input :due_date %>
+  <%= f.input :status %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to 'Cancel', issueview_index_path , :class => 'btn' %>
   </div>
 <% end %>

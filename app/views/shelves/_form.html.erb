@@ -1,21 +1,7 @@
-<%= simple_form_for(@shelf) do |f| %>
-  <% if @shelf.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@shelf.errors.count, "error") %> prohibited this shelf from being saved:</h2>
-
-      <ul>
-      <% @shelf.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :shelf_name %><br />
-    <%= f.text_field :shelf_name, placeholder: 'Bookshelf Name' %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+<%= simple_form_for @shelf, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :shelf_name, placeholder: 'Bookshelf Name' %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to 'Cancel', shelfview_index_path , :class => 'btn' %>
   </div>
 <% end %>

@@ -1,33 +1,11 @@
-<%= simple_form_for(@author) do |f| %>
-  <% if @author.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@author.errors.count, "error") %> prohibited this author from being saved:</h2>
+<%= simple_form_for @author, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :first_name, placeholder: 'First Name', label: 'John' %>
+  <%= f.input :last_name, placeholder: 'Last Name', label:'Doe' %>
+  <%= f.input :phone, placeholder:0266001011 %>
+  <%= f.input :email, placeholder:'abc@example.com' %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to 'Cancel', authorview_index_path, class: 'btn' %>
 
-      <ul>
-      <% @author.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :first_name, 'First Name'%><br />
-    <%= f.text_field :first_name, placeholder: 'First Name' %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, placeholder: 'Last Name' %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.number_field :phone ,placeholder: 'Phone'%>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email, placeholder: 'Email' %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
   </div>
 <% end %>

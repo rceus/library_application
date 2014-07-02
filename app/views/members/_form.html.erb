@@ -1,47 +1,18 @@
-<%= simple_form_for(@member, :html => { :class => 'form' }) do |f| %>
-  <% if @member.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@member.errors.count, "error") %> prohibited this member from being saved:</h2>
+<%= simple_form_for @member, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :first_name, placeholder:'Jane', label:'First Name' %>
+  <%= f.input :last_name, placeholder: 'Doe', label:'Last Name' %>
+  <%= f.input :street, placeholder:'Street Address', label:'Street' %>
 
-      <ul>
-      <% @member.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, :placeholder => 'First Name', label:'First Name' %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, :placeholder=> 'Last Name' %>
-  </div>
-  <div class="field">
-    <%= f.label :street %><br />
-    <%= f.text_field :street, :placeholder=>'Street Address'%>
-  </div>
-  <div class="field">
-   <%= f.label :city_id %><br />
-    <%= f.select :city_id, City.find(:all, :group=>"city_name", :order=> "city_name").collect {|s|
+  <%= f.input :city_id, label:'City', as: :select, collection:City.find(:all, :group=>"city_name", :order=> "city_name").collect {|s|
       [(s.city_name),s.id]} %>
-  </div>
-  <div class="field">
-   <%= f.label :country_id %><br />
-    <%= f.select :country_id, Country.find(:all, :group=>"country_name", :order=> "country_name").collect {|s|
+
+  <%= f.input :country_id, label:'Country' ,as: :select,  collection: Country.find(:all, :group=>"country_name", :order=> "country_name").collect {|s|
       [(s.country_name),s.id]} %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.number_field :phone, :placeholder=>'Phone Number' %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email,:placeholder=>'E-mail' %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <%= f.input :phone,placeholder:'4567832933' %>
+  <%= f.input :email, placeholder:'abc@example.com' %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to 'Cancel',
+                memberview_index_path, :class => 'btn' %>
   </div>
 <% end %>

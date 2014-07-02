@@ -1,4 +1,8 @@
 LibraryVersion1::Application.routes.draw do
+  get "booksearch/index"
+
+  get "tester/index"
+
   get "test/index"
 
   get "shelfview/index"

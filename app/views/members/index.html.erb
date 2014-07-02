@@ -1,35 +1,49 @@
-<h1>Membership Records</h1>
-
-<table>
-  <tr>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Street</th>
-    <th>City</th>
-    <th>Country</th>
-    <th>Phone</th>
-    <th>Email</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @members.each do |member| %>
-  <tr>
-    <td><%= member.first_name %></td>
-    <td><%= member.last_name %></td>
-    <td><%= member.street %></td>
-    <td><%= member.city.city_name %></td>
-    <td><%= member.country.country_name %></td>
-    <td><%= member.phone %></td>
-    <td><%= member.email %></td>
-    <td><%= link_to 'Show', member %></td>
-    <td><%= link_to 'Edit', edit_member_path(member) %></td>
-    <td><%= link_to 'Destroy', member, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<%- model_class = Member -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:first_name) %></th>
+      <th><%= model_class.human_attribute_name(:last_name) %></th>
+      <th><%= model_class.human_attribute_name(:street) %></th>
+      <th><%= model_class.human_attribute_name(:city_id) %></th>
+      <th><%= model_class.human_attribute_name(:country_id) %></th>
+      <th><%= model_class.human_attribute_name(:phone) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @members.each do |member| %>
+      <tr>
+        <td><%= link_to member.id, member_path(member) %></td>
+        <td><%= member.first_name %></td>
+        <td><%= member.last_name %></td>
+        <td><%= member.street %></td>
+        <td><%= member.city_id %></td>
+        <td><%= member.country_id %></td>
+        <td><%= member.phone %></td>
+        <td><%= member.email %></td>
+        <td><%=l member.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_member_path(member), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      member_path(member),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
-
-<br/>
-<br>
-<%= link_to 'Go Back', memberview_index_path%>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_member_path,
+            :class => 'btn btn-primary' %>
+<%= link_to 'Back',
+            memberview_index_path,
+            :class => 'btn' %>

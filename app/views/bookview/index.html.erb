@@ -1,13 +1,16 @@
 <h1>Book Essentials</h1><hr><br><br>
 <ul>
-	<li><%= link_to 'All Books',books_path %></li><br><br>
-	<li><%= link_to 'Search by Book Name', books_path%></li><br><br>
-	<li><%= link_to 'Search by Book Author', books_path%></li><br><br>
-	<li><%= link_to 'Search by Book Publisher', books_path%></li><br><br>
-	<li><%= link_to 'Search by Book ISBN', books_path%></li><br><br>
-	<li><%= link_to 'Search by Book Category', books_path%></li><br><br>
-	<li><%= link_to 'Search by Book Shelf', books_path%></li><br><br>
-	<li><%= link_to 'Add New Book', new_book_path%></li><br><br>
+	<li><%= link_to 'All Books',books_path , class:'btn'%></li><br><br>
+	<li><%= link_to 'Search Book', booksearch_index_path,class:'btn' %></li><br><br>
+	<!--
+	<li><%= link_to 'Search by Book Name', books_path,class:'btn' %></li><br><br>
+	<li><%= link_to 'Search by Book Author', books_path, class:'btn' %></li><br><br>
+	<li><%= link_to 'Search by Book Publisher', books_path,class:'btn' %></li><br><br>
+	<li><%= link_to 'Search by Book ISBN', books_path, class:'btn' %></li><br><br>
+	<li><%= link_to 'Search by Book Category', books_path, class:'btn'%></li><br><br>
+	<li><%= link_to 'Search by Book Shelf', books_path, class:'btn' %></li><br><br>
+	-->
+	<li><%= link_to 'Add New Book', new_book_path, class:'btn' %></li><br><br>
 </ul>
 
-<%= link_to 'Go Back', search_index_path%><br><br>
+<%= link_to 'Go Back', search_index_path, class:'btn' %><br><br>
