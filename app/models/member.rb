@@ -1,5 +1,5 @@
 class Member < ActiveRecord::Base
-	belongs_to :issue
+	has_many :issues, foreign_key:'member_id', class_name:'Issue'
 	belongs_to :city
 	belongs_to :country
 	validates_format_of :first_name, :last_name, :with => /^[a-zA-Z\d ]*$/i,

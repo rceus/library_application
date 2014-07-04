@@ -23,8 +23,8 @@
         <td><%= link_to publisher.id, publisher_path(publisher) %></td>
         <td><%= publisher.name %></td>
         <td><%= publisher.street %></td>
-        <td><%= publisher.city_id %></td>
-        <td><%= publisher.country_id %></td>
+        <td><%= publisher.city.city_name unless publisher.city.nil?%></td>
+        <td><%= publisher.country.country_name unless publisher.country.nil?%></td>
         <td><%= publisher.phone %></td>
         <td><%= publisher.email %></td>
         <td><%= publisher.status %></td>

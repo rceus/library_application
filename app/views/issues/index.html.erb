@@ -11,7 +11,6 @@
       <th><%= model_class.human_attribute_name(:issue_date) %></th>
       <th><%= model_class.human_attribute_name(:due_date) %></th>
       <th><%= model_class.human_attribute_name(:status) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -19,12 +18,11 @@
     <% @issues.each do |issue| %>
       <tr>
         <td><%= link_to issue.id, issue_path(issue) %></td>
-        <td><%= issue.book_id %></td>
-        <td><%= issue.member_id %></td>
+        <td><%= issue.book.name unless issue.book.nil? %></td>
+        <td><%= issue.member.first_name+' '+issue.member.last_name unless issue.member.nil? %></td>
         <td><%= issue.issue_date %></td>
         <td><%= issue.due_date %></td>
         <td><%= issue.status %></td>
-        <td><%=l issue.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_issue_path(issue), :class => 'btn btn-mini' %>

@@ -23,8 +23,8 @@
         <td><%= member.first_name %></td>
         <td><%= member.last_name %></td>
         <td><%= member.street %></td>
-        <td><%= member.city_id %></td>
-        <td><%= member.country_id %></td>
+        <td><%= member.city.city_name unless member.city.nil? %></td>
+        <td><%= member.country.country_name unless member.country.nil? %></td>
         <td><%= member.phone %></td>
         <td><%= member.email %></td>
         <td><%=l member.created_at %></td>
