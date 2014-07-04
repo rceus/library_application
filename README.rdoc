@@ -28,6 +28,14 @@ Run the following commands:
        
 Go to https://localhost:3000 and you are done.
 
+==Development 
+
+This library management system is undergoing constant development. You can contribute by:
+1) Finding Bugs
+2) Integrating the Google Books API to link to a book if the library doesn't have it
+3) Making the front-end better
+
+
 New to Rails? Should go through this first.
 == Welcome to Rails
 
