@@ -1,4 +1,7 @@
 LibraryVersion1::Application.routes.draw do
+  
+  get "authorsearch/lookup", as: 'authorsearch_lookup'
+
   get "authorsearch/index"
 
   get "booksearch/lookup", as: 'booksearch_lookup'

@@ -1,0 +1,13 @@
+<%= form_tag(authorsearch_lookup_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+      
+    <div class="input">
+      <%= text_field_tag :name, params[:name], class: "span2", placeholder: "Search by Author Full Name"%>
+    <br>
+    <br><br>
+
+      <button class="btn" type="submit"><i class=" icon-search"></i></button>
+      <%= link_to 'Back', authorview_index_path,class:'btn' %>    
+      <br><br>
+      <hr>
+    </div>
+<%end%>
