@@ -6,7 +6,7 @@ respond_to :js, :html
   end
 
   def lookup
-  	@authors = Author.where("first_name+' '+last_name like ?", "%#{params[:name]}%")
+  	@authors = Author.where("first_name like ?", "%#{params[:name]}%")
   	respond_with(@authors)
   end
 end
