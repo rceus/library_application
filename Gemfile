@@ -25,6 +25,7 @@ gem 'therubyracer'
 gem 'less-rails'
 gem 'simple_form'
 gem 'twitter-bootstrap-rails'
+gem 'googlebooks'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

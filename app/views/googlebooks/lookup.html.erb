@@ -1,0 +1,28 @@
+<%- model_class = Book -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Book Name</th>
+      <th>ISBN</th>
+      <th>Author</th>
+      <th>Publisher</th>
+      <th>Info</th>
+      </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.isbn %></td>
+        <td><%= book.authors %></td>
+        <td><%= book.publisher %></td>
+        <td><%= book.info_link%></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', googlebooks_index_path, class: 'btn' %>
