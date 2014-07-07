@@ -6,9 +6,10 @@ Ruby 1.9.3
 Rails 3.2.0
 
 Special Gems:
-twitter-bootstrap-rails
-simple_form
-bundler
+twitter-bootstrap-rails,
+simple_form,
+bundler,
+googlebooks
 
 Developed by Rishabh Jain
 
@@ -34,7 +35,7 @@ This library management system is undergoing constant development. You can contr
 
 1) Reporting and removing bugs in the application.
 
-2) Integrating the Google Books gem to link to a book if the library doesn't have it
+2) Integrating the Google Books gem to link to a book if the library doesn't have it (Done)
 
 3) Making the front-end better
 
