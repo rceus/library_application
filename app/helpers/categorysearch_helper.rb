@@ -1,0 +1,2 @@
+module CategorysearchHelper
+end
