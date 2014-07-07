@@ -1,5 +1,5 @@
 == Specifications and Instructions
-A comprehensive and easy to use library management system.
+A comprehensive and easy to use library management system. 
 Written in Ruby on Rails
 
 Ruby 1.9.3
